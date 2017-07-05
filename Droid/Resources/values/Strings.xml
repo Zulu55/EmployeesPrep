@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Employees</string>
+    <string name="hello">Employees</string>
+    <string name="UrlApi">http://tataappapi.azurewebsites.net</string>
+    <string name="UrlBackend">http://tataappbackend.azurewebsites.net</string>
+</resources>

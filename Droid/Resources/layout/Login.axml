@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp">
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1"
+            android:text="Login"
+            android:gravity="center" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout2">
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="100.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView2"
+                android:text="Correo:"
+                android:gravity="center_vertical" />
+            <EditText
+                android:inputType="textEmailAddress"
+                android:layout_width="230.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/editTextEmail" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout3">
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="100.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView3"
+                android:text="Contraseña:"
+                android:gravity="center_vertical" />
+            <EditText
+                android:inputType="textPassword"
+                android:layout_width="230.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/editTextPassword" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/buttonLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="Ingresar"
+            android:layout_marginTop="20dp" />
+    </LinearLayout>
+</LinearLayout>
