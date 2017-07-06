@@ -1,20 +1,20 @@
-﻿namespace EmployeesPrep.Droid
+﻿namespace Employees.Droid
 {
     using System;
 	using Android.App;
-	using Android.OS;
-	using Android.Widget;
     using Android.Content;
-	using EmployeesPrep.Services;
-	using EmployeesPrep.Models;
-    using Android.Views;
+	using Android.OS;
+	using Android.Views;
+	using Android.Widget;
+    using Employees.Models;
+    using Employees.Services;
 
-
-	[Activity(Label = "Employees", MainLauncher = true, Icon = "@mipmap/icon")]
+    [Activity(Label = "Employees", MainLauncher = true, Icon = "@mipmap/icon")]
 	public class LoginActivity : Activity
     {
         #region Attributes
-        ApiService apiService; 
+        ApiService apiService;
+        DialogService dialogService;
         #endregion
 
         #region Widgets
@@ -22,6 +22,7 @@
 		EditText editTextPassword;
         Button buttonLogin;
         ProgressBar progressBarActivityIndicator;
+        Switch switchRememberme;
         #endregion
 
         #region Methods
@@ -35,8 +36,11 @@
             editTextPassword = FindViewById<EditText>(Resource.Id.editTextPassword);
 			buttonLogin = FindViewById<Button>(Resource.Id.buttonLogin);
 			progressBarActivityIndicator = FindViewById<ProgressBar>(Resource.Id.progressBarActivityIndicator);
+			switchRememberme = FindViewById<Switch>(Resource.Id.switchRememberme);
 
 			apiService = new ApiService();
+            dialogService = new DialogService();
+
             progressBarActivityIndicator.Visibility = ViewStates.Invisible;
 
 			buttonLogin.Click += ButtonLogin_Click;
@@ -44,30 +48,42 @@
 
         async void ButtonLogin_Click(object sender, EventArgs e)
         {
-			if (string.IsNullOrEmpty(editTextEmail.Text))
-			{
-				ShowMessage("Error", "Debe ingresar un email.");
-				return;
-			}
+            if (string.IsNullOrEmpty(editTextEmail.Text))
+            {
+                dialogService.ShowMessage(this, "Error", "Debes ingresar un email.");
+                return;
+            }
 
-			if (string.IsNullOrEmpty(editTextPassword.Text))
-			{
-				ShowMessage("Error", "Debe ingresar una contraseña.");
-				return;
-			}
+            if (string.IsNullOrEmpty(editTextPassword.Text))
+            {
+                dialogService.ShowMessage(this, "Error", "Debes ingresar una constraseña.");
+                return;
+            }
 
 			progressBarActivityIndicator.Visibility = ViewStates.Visible;
-			var urlAPI = Resources.GetString(Resource.String.UrlApi);
+            buttonLogin.Enabled = false;
+
+            //var checkConnetion = await apiService.CheckConnection();
+            //if (!checkConnetion.IsSuccess)
+            //{
+            //	progressBarActivityIndicator.Visibility = ViewStates.Invisible;
+            //	buttonLogin.Enabled = true;
+            //	ShowMessage("Error", checkConnetion.Message);
+            //	return;
+            //}
+
+            var urlAPI = Resources.GetString(Resource.String.URLAPI);
 
 			var token = await apiService.GetToken(
-				  urlAPI,
-				  editTextEmail.Text,
-				  editTextPassword.Text);
+				urlAPI,
+                editTextEmail.Text,
+				editTextPassword.Text);
 
 			if (token == null)
 			{
-				progressBarActivityIndicator.Visibility = ViewStates.Invisible;
-				ShowMessage("Error", "Usuario o contraseña incorrectos.");
+                progressBarActivityIndicator.Visibility = ViewStates.Invisible;
+                buttonLogin.Enabled = true;
+				dialogService.ShowMessage(this, "Error", "El email o la contraseña es incorrecto.");
 				editTextPassword.Text = null;
 				return;
 			}
@@ -75,7 +91,8 @@
 			if (string.IsNullOrEmpty(token.AccessToken))
 			{
 				progressBarActivityIndicator.Visibility = ViewStates.Invisible;
-				ShowMessage("Error", token.ErrorDescription);
+				buttonLogin.Enabled = true;
+				dialogService.ShowMessage(this, "Error", token.ErrorDescription);
 				editTextPassword.Text = null;
 				return;
 			}
@@ -91,36 +108,29 @@
 			if (!response.IsSuccess)
 			{
 				progressBarActivityIndicator.Visibility = ViewStates.Invisible;
-				ShowMessage("Error", "Problema recuperando información de usuario.");
+				buttonLogin.Enabled = true;
+				dialogService.ShowMessage(this, "Error", "Problema con el usuario, contacte a Pandian.");
 				return;
 			}
 
 			var employee = (Employee)response.Result;
 			employee.AccessToken = token.AccessToken;
-			employee.IsRemembered = true;
+			employee.IsRemembered = switchRememberme.Checked;
 			employee.Password = editTextPassword.Text;
 			employee.TokenExpires = token.Expires;
 			employee.TokenType = token.TokenType;
+
+			progressBarActivityIndicator.Visibility = ViewStates.Invisible;
+			buttonLogin.Enabled = true;
 
             var intent = new Intent(this, typeof(EmployeesActivity));
 			intent.PutExtra("AccessToken", employee.AccessToken);
 			intent.PutExtra("TokenType", employee.TokenType);
 			intent.PutExtra("EmployeeId", employee.EmployeeId);
 			intent.PutExtra("FullName", employee.FullName);
-			progressBarActivityIndicator.Visibility = ViewStates.Invisible;
-			StartActivity(intent);
-        }
 
-		void ShowMessage(string title, string message)
-		{
-			var builder = new AlertDialog.Builder(this);
-			var alert = builder.Create();
-			alert.SetTitle(title);
-			alert.SetIcon(Resource.Mipmap.Icon);
-			alert.SetMessage(message);
-			alert.SetButton("Acceptar", (s, ev) => { });
-			alert.Show();
+            StartActivity(intent);
 		}
 		#endregion
-	}
+    }
 }

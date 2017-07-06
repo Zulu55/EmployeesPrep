@@ -1,4 +1,4 @@
-﻿namespace EmployeesPrep.Models
+﻿namespace Employees.Models
 {
 	using System.Collections.Generic;
 	using Newtonsoft.Json;

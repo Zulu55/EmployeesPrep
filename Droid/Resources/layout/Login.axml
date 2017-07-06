@@ -5,61 +5,78 @@
     android:layout_height="match_parent">
     <LinearLayout
         android:orientation="vertical"
-        android:minWidth="25px"
-        android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout1"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp">
+        android:layout_marginBottom="20dp"
+        android:layout_margin="20dp">
         <TextView
+            android:text="Login"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView1"
-            android:text="Login"
             android:gravity="center" />
         <LinearLayout
             android:orientation="horizontal"
-            android:minWidth="25px"
-            android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/linearLayout2">
+            android:id="@+id/linearLayout2"
+            android:layout_marginTop="10dp">
             <TextView
+                android:text="E-Mail:"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_width="100.0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/textView2"
-                android:text="Correo:"
                 android:gravity="center_vertical" />
             <EditText
                 android:inputType="textEmailAddress"
-                android:layout_width="230.0dp"
+                android:layout_width="250.0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/editTextEmail" />
+                android:id="@+id/editTextEmail"
+                android:text="jzuluaga55@gmail.com" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
-            android:minWidth="25px"
-            android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/linearLayout3">
+            android:id="@+id/linearLayout2"
+            android:layout_marginTop="10dp">
             <TextView
+                android:text="Contraseña:"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_width="100.0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/textView3"
-                android:text="Contraseña:"
+                android:id="@+id/textView2"
                 android:gravity="center_vertical" />
             <EditText
                 android:inputType="textPassword"
-                android:layout_width="230.0dp"
+                android:layout_width="250.0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/editTextPassword" />
+                android:id="@+id/editTextPassword"
+                android:text="123456" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout3"
+            android:paddingTop="20dp">
+            <TextView
+                android:text="Recordarme"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textView3" />
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/switchRememberme"
+                android:paddingLeft="20dp" />
         </LinearLayout>
         <ProgressBar
             android:layout_height="wrap_content"
@@ -71,11 +88,11 @@
             android:layout_marginTop="20dp"
             android:indeterminate="true" />
         <Button
-            android:id="@+id/buttonLogin"
+            android:text="Ingresar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/buttonLogin"
             android:textAllCaps="false"
-            android:text="Ingresar"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="40px" />
     </LinearLayout>
 </LinearLayout>

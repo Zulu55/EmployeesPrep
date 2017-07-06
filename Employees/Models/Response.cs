@@ -1,4 +1,4 @@
-﻿namespace EmployeesPrep.Models
+﻿namespace Employees.Models
 {
     public class Response
     {

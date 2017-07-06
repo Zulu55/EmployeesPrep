@@ -5,7 +5,7 @@
 //		
 using Foundation;
 
-namespace EmployeesPrep.iOS
+namespace Employees.iOS
 {
     [Register("ViewController")]
     partial class ViewController

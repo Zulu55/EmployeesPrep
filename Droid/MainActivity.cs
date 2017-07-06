@@ -2,9 +2,9 @@
 using Android.Widget;
 using Android.OS;
 
-namespace EmployeesPrep.Droid
+namespace Employees.Droid
 {
-    [Activity(Label = "EmployeesPrep", MainLauncher = false, Icon = "@mipmap/icon")]
+    [Activity(Label = "Employees", MainLauncher = false, Icon = "@mipmap/icon")]
     public class MainActivity : Activity
     {
         int count = 1;

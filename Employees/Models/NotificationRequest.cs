@@ -1,7 +1,7 @@
-﻿namespace EmployeesPrep.Models
+﻿namespace Employees.Models
 {
-	public class NotificationRequest
-	{
+    public class NotificationRequest
+    {
 		public string From
 		{
 			get;
@@ -19,5 +19,5 @@
 			get;
 			set;
 		}
-	}
+    }
 }

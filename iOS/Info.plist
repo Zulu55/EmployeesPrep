@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleName</key>
-	<string>EmployeesPrep</string>
+	<string>Employees</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.zulusoftware.employeesprep</string>
+	<string>com.zulusoftware.employees</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>

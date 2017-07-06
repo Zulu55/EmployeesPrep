@@ -2,7 +2,7 @@
 
 using UIKit;
 
-namespace EmployeesPrep.iOS
+namespace Employees.iOS
 {
     public partial class ViewController : UIViewController
     {
