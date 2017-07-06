@@ -7,6 +7,7 @@
     using Android.Content;
 	using EmployeesPrep.Services;
 	using EmployeesPrep.Models;
+    using Android.Views;
 
 
 	[Activity(Label = "Employees", MainLauncher = true, Icon = "@mipmap/icon")]
@@ -20,6 +21,7 @@
         EditText editTextEmail;
 		EditText editTextPassword;
         Button buttonLogin;
+        ProgressBar progressBarActivityIndicator;
         #endregion
 
         #region Methods
@@ -31,11 +33,13 @@
 
             editTextEmail = FindViewById<EditText>(Resource.Id.editTextEmail);
             editTextPassword = FindViewById<EditText>(Resource.Id.editTextPassword);
-            buttonLogin = FindViewById<Button>(Resource.Id.buttonLogin);
+			buttonLogin = FindViewById<Button>(Resource.Id.buttonLogin);
+			progressBarActivityIndicator = FindViewById<ProgressBar>(Resource.Id.progressBarActivityIndicator);
 
-            apiService = new ApiService();
+			apiService = new ApiService();
+            progressBarActivityIndicator.Visibility = ViewStates.Invisible;
 
-            buttonLogin.Click += ButtonLogin_Click;
+			buttonLogin.Click += ButtonLogin_Click;
         }
 
         async void ButtonLogin_Click(object sender, EventArgs e)
@@ -52,7 +56,8 @@
 				return;
 			}
 
-            var urlAPI = Resources.GetString(Resource.String.UrlApi);
+			progressBarActivityIndicator.Visibility = ViewStates.Visible;
+			var urlAPI = Resources.GetString(Resource.String.UrlApi);
 
 			var token = await apiService.GetToken(
 				  urlAPI,
@@ -61,6 +66,7 @@
 
 			if (token == null)
 			{
+				progressBarActivityIndicator.Visibility = ViewStates.Invisible;
 				ShowMessage("Error", "Usuario o contraseña incorrectos.");
 				editTextPassword.Text = null;
 				return;
@@ -68,6 +74,7 @@
 
 			if (string.IsNullOrEmpty(token.AccessToken))
 			{
+				progressBarActivityIndicator.Visibility = ViewStates.Invisible;
 				ShowMessage("Error", token.ErrorDescription);
 				editTextPassword.Text = null;
 				return;
@@ -83,6 +90,7 @@
 
 			if (!response.IsSuccess)
 			{
+				progressBarActivityIndicator.Visibility = ViewStates.Invisible;
 				ShowMessage("Error", "Problema recuperando información de usuario.");
 				return;
 			}
@@ -99,6 +107,7 @@
 			intent.PutExtra("TokenType", employee.TokenType);
 			intent.PutExtra("EmployeeId", employee.EmployeeId);
 			intent.PutExtra("FullName", employee.FullName);
+			progressBarActivityIndicator.Visibility = ViewStates.Invisible;
 			StartActivity(intent);
         }
 
@@ -112,7 +121,6 @@
 			alert.SetButton("Acceptar", (s, ev) => { });
 			alert.Show();
 		}
-
 		#endregion
 	}
 }
