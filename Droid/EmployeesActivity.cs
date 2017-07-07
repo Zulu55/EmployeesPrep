@@ -58,28 +58,45 @@
         {
 			progressBarActivityIndicator.Visibility = ViewStates.Visible;
 
-            var urlAPI = Resources.GetString(Resource.String.URLAPI);
+            List<Employee> employees;
+            var dataEmployees = (EmployeeFragment)this.FragmentManager.FindFragmentByTag("DataEmployees");
 
-            var response = await apiService.GetList<Employee>(
-				urlAPI,
-				"/api",
-				"/Employees",
-				tokenType,
-				accessToken);
+            if (dataEmployees == null)
+            {
+				dataEmployees = new EmployeeFragment();
+				var fragmentTransaction = this.FragmentManager.BeginTransaction();
+				fragmentTransaction.Add(dataEmployees, "DataEmployees");
+				fragmentTransaction.Commit();
 
-			if (!response.IsSuccess)
-			{
-				progressBarActivityIndicator.Visibility = ViewStates.Invisible;
-				dialogService.ShowMessage(this, "Error", response.Message);
-				return;
-			}
+                var urlAPI = Resources.GetString(Resource.String.URLAPI);
 
-            var employees = ((List<Employee>)response.Result)
-                .OrderBy(e => e.FirstName)
-                .ThenBy(e => e.LastName)
-                .ToList();
+                var response = await apiService.GetList<Employee>(
+                    urlAPI,
+                    "/api",
+                    "/Employees",
+                    tokenType,
+                    accessToken);
 
-			listViewEmployees.Adapter = new EmployeesAdapter(
+                if (!response.IsSuccess)
+                {
+                    progressBarActivityIndicator.Visibility = ViewStates.Invisible;
+                    dialogService.ShowMessage(this, "Error", response.Message);
+                    return;
+                }
+
+                employees = ((List<Employee>)response.Result)
+                    .OrderBy(e => e.FirstName)
+                    .ThenBy(e => e.LastName)
+                    .ToList();
+
+                dataEmployees.employees = employees;
+            }
+            else
+            {
+                employees = dataEmployees.employees;
+            }
+
+            listViewEmployees.Adapter = new EmployeesAdapter(
 				this,
 				employees,
                 Resource.Layout.EmployeeItem,
