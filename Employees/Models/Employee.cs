@@ -67,5 +67,21 @@
 		{
 			return EmployeeId;
 		}
+
+        public override string ToString()
+        {
+            return string.Format(
+                "EmployeeId={0}, FirstName={1}, LastName={2}, " +
+                "EmployeeCode={3}, DocumentTypeId={4}, LoginTypeId={5}, " +
+                "Document={6}, Picture={7}, Email={8}, Phone={9}, " +
+                "Address={10}, ImageArray={11}, " +
+                "AccessToken={12}, TokenType={13}, " +
+                "TokenExpires={14}, Password={15}, " +
+                "IsRemembered={16}, FullName={17}, " +
+                "FullPicture={18}]", EmployeeId, FirstName, LastName, 
+                EmployeeCode, DocumentTypeId, LoginTypeId, Document, Picture, 
+                Email, Phone, Address, ImageArray, AccessToken, TokenType, 
+                TokenExpires, Password, IsRemembered, FullName, FullPicture);
+        }
 	}
 }

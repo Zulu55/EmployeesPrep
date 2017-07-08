@@ -1,6 +1,7 @@
 ﻿namespace Employees.iOS
 {
-    using System;
+	using System;
+	using System.IO;
 	using UIKit;
     using Foundation;
     using Employees.Services;
@@ -107,6 +108,10 @@
             employee.Password = textFieldPassword.Text;
 			employee.TokenExpires = token.Expires;
 			employee.TokenType = token.TokenType;
+
+            var documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            var fileName = Path.Combine(documents, "Employees.txt");
+            File.WriteAllText(fileName, employee.ToString());
 
 			return true;
 		}
