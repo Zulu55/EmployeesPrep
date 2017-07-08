@@ -17,54 +17,136 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Title">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7" translatesAutoresizingMaskIntoConstraints="NO" text="Employees">
                                 <rect key="frame" x="0.0" y="96" width="375" height="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <constraints>
+                                    <constraint id="998" firstAttribute="width" constant="375"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="998"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="998"/>
+                                    </mask>
+                                </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10" translatesAutoresizingMaskIntoConstraints="NO" text="E-Mail:" fixedFrame="YES">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10" translatesAutoresizingMaskIntoConstraints="NO" text="E-Mail:">
                                 <rect key="frame" x="36" y="166" width="85" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="1001" firstAttribute="width" constant="85"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1001"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="1001"/>
+                                    </mask>
+                                </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="12" translatesAutoresizingMaskIntoConstraints="NO" text="Constraseña:" fixedFrame="YES">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="12" translatesAutoresizingMaskIntoConstraints="NO" text="Constraseña:">
                                 <rect key="frame" x="36" y="217" width="120" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="1007" firstAttribute="width" constant="120"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1007"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="1007"/>
+                                    </mask>
+                                </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="25" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Ingrese su email..." clearButtonMode="always" fixedFrame="YES">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="25" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Ingrese su email..." clearButtonMode="always" text="jzuluaga55@gmail.com">
                                 <rect key="frame" x="151" y="164" width="190" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <constraints>
+                                    <constraint id="1004" firstAttribute="width" constant="190"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1004"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="1004"/>
+                                    </mask>
+                                </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="28" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Ingrese su contraseña..." clearButtonMode="always" fixedFrame="YES">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="28" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Ingrese su contraseña..." clearButtonMode="always" text="123456">
                                 <rect key="frame" x="151" y="212" width="190" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <constraints>
+                                    <constraint id="1010" firstAttribute="width" constant="190"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1010"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="1010"/>
+                                    </mask>
+                                </variation>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="31" translatesAutoresizingMaskIntoConstraints="NO" text="Recordarme" fixedFrame="YES">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="31" translatesAutoresizingMaskIntoConstraints="NO" text="Recordarme">
                                 <rect key="frame" x="36" y="269" width="120" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="1013" firstAttribute="width" constant="120"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1013"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="1013"/>
+                                    </mask>
+                                </variation>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="32" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="32" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="151" y="264" width="51" height="31"/>
                             </switch>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="35" animating="YES" fixedFrame="YES">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="35" animating="YES">
                                 <rect key="frame" x="178" y="324" width="20" height="20"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="42" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="42" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="36" y="375" width="305" height="40"/>
                                 <state key="normal" title="Login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
+                                    <mask key="constraints">
+                                        <include reference="1020"/>
+                                        <include reference="1021"/>
+                                    </mask>
                                 </variation>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
@@ -75,6 +157,16 @@
                                     <action selector="ButtonLogin_TouchUpInside:" destination="BYZ-38-t0r" id="708" eventType="touchUpInside"/>
                                     <segue id="988" destination="632" kind="show"/>
                                 </connections>
+                                <constraints>
+                                    <constraint id="1020" firstAttribute="width" constant="305"/>
+                                    <constraint id="1021" firstAttribute="height" constant="40"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1020"/>
+                                        <exclude reference="1021"/>
+                                    </mask>
+                                </variation>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -90,6 +182,26 @@
                                 <exclude reference="35"/>
                                 <exclude reference="42"/>
                             </mask>
+                            <mask key="constraints">
+                                <exclude reference="996"/>
+                                <exclude reference="997"/>
+                                <exclude reference="999"/>
+                                <exclude reference="1000"/>
+                                <exclude reference="1002"/>
+                                <exclude reference="1003"/>
+                                <exclude reference="1005"/>
+                                <exclude reference="1006"/>
+                                <exclude reference="1008"/>
+                                <exclude reference="1009"/>
+                                <exclude reference="1011"/>
+                                <exclude reference="1012"/>
+                                <exclude reference="1014"/>
+                                <exclude reference="1015"/>
+                                <exclude reference="1016"/>
+                                <exclude reference="1017"/>
+                                <exclude reference="1018"/>
+                                <exclude reference="1019"/>
+                            </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
@@ -103,7 +215,47 @@
                                 <include reference="35"/>
                                 <include reference="42"/>
                             </mask>
+                            <mask key="constraints">
+                                <include reference="996"/>
+                                <include reference="997"/>
+                                <include reference="999"/>
+                                <include reference="1000"/>
+                                <include reference="1002"/>
+                                <include reference="1003"/>
+                                <include reference="1005"/>
+                                <include reference="1006"/>
+                                <include reference="1008"/>
+                                <include reference="1009"/>
+                                <include reference="1011"/>
+                                <include reference="1012"/>
+                                <include reference="1014"/>
+                                <include reference="1015"/>
+                                <include reference="1016"/>
+                                <include reference="1017"/>
+                                <include reference="1018"/>
+                                <include reference="1019"/>
+                            </mask>
                         </variation>
+                        <constraints>
+                            <constraint id="996" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="7" secondAttribute="trailing"/>
+                            <constraint id="997" firstItem="7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="96"/>
+                            <constraint id="999" firstItem="10" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="36"/>
+                            <constraint id="1000" firstItem="10" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="166"/>
+                            <constraint id="1002" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="25" secondAttribute="trailing" constant="34"/>
+                            <constraint id="1003" firstItem="25" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="164"/>
+                            <constraint id="1005" firstItem="12" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="36"/>
+                            <constraint id="1006" firstItem="12" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="217"/>
+                            <constraint id="1008" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="28" secondAttribute="trailing" constant="34"/>
+                            <constraint id="1009" firstItem="28" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="212"/>
+                            <constraint id="1011" firstItem="31" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="36"/>
+                            <constraint id="1012" firstItem="31" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="269"/>
+                            <constraint id="1014" firstItem="32" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="151"/>
+                            <constraint id="1015" firstItem="32" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="264"/>
+                            <constraint id="1016" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="35" secondAttribute="trailing" constant="177"/>
+                            <constraint id="1017" firstItem="8bC-Xf-vdC" firstAttribute="bottom" secondItem="35" secondAttribute="bottom" constant="323"/>
+                            <constraint id="1018" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="42" secondAttribute="trailing" constant="34"/>
+                            <constraint id="1019" firstItem="8bC-Xf-vdC" firstAttribute="bottom" secondItem="42" secondAttribute="bottom" constant="252"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="textFieldEmail" destination="25" id="name-outlet-25"/>
@@ -116,7 +268,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-509" y="0.0"/>
+            <point key="canvasLocation" x="-525" y="-3"/>
         </scene>
         <scene sceneID="631">
             <objects>
@@ -129,7 +281,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1047" translatesAutoresizingMaskIntoConstraints="NO" text="FullName">
+                                <rect key="frame" x="0.0" y="75" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="1050" firstAttribute="width" constant="375"/>
+                                    <constraint id="1051" firstAttribute="height" constant="21"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1050"/>
+                                        <exclude reference="1051"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="1050"/>
+                                        <include reference="1051"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="1047"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="1048"/>
+                                <exclude reference="1049"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="1047"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="1048"/>
+                                <include reference="1049"/>
+                            </mask>
+                        </variation>
+                        <constraints>
+                            <constraint id="1048" firstItem="633" firstAttribute="trailing" secondItem="1047" secondAttribute="trailing"/>
+                            <constraint id="1049" firstItem="1047" firstAttribute="top" secondItem="633" secondAttribute="top" constant="75"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="labelFullName" destination="1047" id="name-outlet-1047"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="634" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
